@@ -18,17 +18,9 @@ DEB:
 
     aptitude install zabbix-sender pflogsumm logtail
 
-RPM: 
+RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 7
 
     yum install zabbix-sender postfix-perl-scripts
-    cd /tmp
-    wget http://www.fourmilab.ch/webtools/logtail/logtail.tar.gz
-    tar -xzf logtail.tar.gz
-    cp -i logtail.pl /usr/sbin/logtail
-    chmod +x /usr/sbin/logtail
-    rm -f /tmp/logtail.*
-    cd -
-    sed -i -e 's/#! \/bin\/perl/#! \/usr\/bin\/perl/' /usr/sbin/logtail
 
 Создать файл `/etc/zabbix/scripts/postfix.sh` (см. файл `scripts/postfix.sh`)
 
