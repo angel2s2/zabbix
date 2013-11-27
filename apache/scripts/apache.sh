@@ -19,8 +19,9 @@ ZBX_REQ_DATA="$1"
 ZBX_REQ_DATA_URL="$2"
 
 # Apache defaults
-APACHE_STATS_DEFAULT_URL="http://localhost/server-status?auto"
+APACHE_STATS_DEFAULT_URL="http://localhost:81/server-status?auto"
 FETCH_BIN="/usr/bin/fetch"
+WGET_BIN="/usr/bin/wget"
 
 #
 # Error handling:
@@ -40,8 +41,9 @@ else
 fi
 
 # save the apache stats in a variable for future parsing
-APACHE_STATS=$($FETCH_BIN -q -o - $URL 2> /dev/null)
-TMPSCOREBOARD=$(echo $APACHE_STATS | grep -i Scoreboard | sed 's/Scoreboard://')
+#APACHE_STATS=$($FETCH_BIN -q -o - $URL 2> /dev/null)
+APACHE_STATS="$($WGET_BIN -qO- $URL 2>/dev/null)"
+TMPSCOREBOARD="$(echo "$APACHE_STATS" | grep -i Scoreboard | sed 's/Scoreboard://')"
 
 # error during retrieve
 if [ $? -ne 0 -o -z "$APACHE_STATS" ]; then
