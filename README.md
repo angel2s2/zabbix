@@ -34,7 +34,7 @@ RPM:
     cd -
     sed -i -e 's/#! \/bin\/perl/#! \/usr\/bin\/perl/' /usr/sbin/logtail
 
-Создать файл `/etc/zabbix/scripts/postfix.sh` (см. файл scripts/postfix.sh)
+Создать файл `/etc/zabbix/scripts/postfix.sh` (см. файл `scripts/postfix.sh`)
 
     mkdir -p /etc/zabbix/scripts
     touch /etc/zabbix/scripts/postfix.sh
