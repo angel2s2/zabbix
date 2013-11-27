@@ -1,4 +1,4 @@
-# zabbix
+# zabbix templates templates
 
 > Справедливо для DEB и RPM дистрибутивов
 
@@ -15,6 +15,7 @@
 * Мониторинг полученных, отправленных байт
 * Мониторинг полученных, отправленных писем и других параметров
 
+# 
 
 > zabbix repo DEB: `wget http://repo.zabbix.com/zabbix/2.2/debian/pool/main/z/zabbix-release/zabbix-release_2.2-1+wheezy_all.deb`
 > `dpkg -i zabbix-release_2.2-1+wheezy_all.deb && apt-get update`

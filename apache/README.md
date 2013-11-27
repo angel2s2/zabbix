@@ -1,4 +1,4 @@
-# zabbix
+# zabbix templates
 
 ## Apache
 

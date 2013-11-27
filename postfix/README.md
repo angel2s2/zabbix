@@ -1,4 +1,4 @@
-# zabbix
+# zabbix templates
 
 ## Postfix
 
@@ -11,7 +11,7 @@
     UserParameter=postfix.incoming,find /var/spool/postfix/incoming -type f | wc -l
     UserParameter=postfix.active,  find /var/spool/postfix/ative -type f | wc -l
 
-### Мониторинг полученных, отправленных писем и других параметров
+### Мониторинг полученных, отправленных байт, писем и других параметров
 На сервере postfix нужно установить `zabbix-sender pflogsumm logtail`
 
 DEB: 
