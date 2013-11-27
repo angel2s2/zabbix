@@ -14,7 +14,7 @@ function zsend {
   /usr/bin/zabbix_sender -c $ZABBIX_CONF -k "${key}" -o "${value}" 2>&1 >/dev/null
 }
 
-/usr/sbin/logtail -f$MAILLOG -o$DAT1 | $PFLOGSUMM -h 0 -u 0 --no_bounce_detail --no_deferral_detail --no_reject_detail --no_no_msg_size --no_smtpd_warnings > $DAT2
+/usr/sbin/logtail -f$MAILLOG -o$DAT1 2>/dev/null | $PFLOGSUMM -h 0 -u 0 --no_bounce_detail --no_deferral_detail --no_reject_detail --no_no_msg_size --no_smtpd_warnings > $DAT2
 
 zsend received
 zsend delivered
