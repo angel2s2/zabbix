@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<? src: https://www.zabbix.com/wiki/howto/monitor/db/mysql/extensive_mysql_monitoring_including_replication ?>
+<zabbix_export version="1.0" date="2008-09-04" time="08:00">
+	<hosts>
+		<host name="Template_MySQL_Master_Server">
+			<useip>0</useip>
+			<dns/>
+			<ip/>
+			<port>10050</port>
+			<status>3</status>
+			<groups>
+				<group>Templates</group>
+			</groups>
+			<items>
+				<item type="2" key="mysql.Master_Status_File" value_type="1">
+					<description>MySQL Master: binlog file</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Master</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Master_Status_Position" value_type="3">
+					<description>MySQL Master: binlog position</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Master</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Master_Status_Binlog_Do_DB" value_type="1">
+					<description>MySQL Master: DBs used in the binlog by the master</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Master</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Master_Status_Binlog_Ignore_DB" value_type="1">
+					<description>MySQL Master: DBs ignored in the by the master</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Master</application>
+					</applications>
+				</item>
+			</items>
+		</host>
+	</hosts>
+</zabbix_export>
