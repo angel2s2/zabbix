@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<? src: https://www.zabbix.com/wiki/howto/monitor/db/mysql/extensive_mysql_monitoring_including_replication ?>
+<zabbix_export version="1.0" date="2008-09-04" time="08:00">
+	<hosts>
+		<host name="Template_MySQL_Slave_Server">
+			<useip>0</useip>
+			<dns/>
+			<ip/>
+			<port>10050</port>
+			<status>3</status>
+			<groups>
+				<group>Templates</group>
+			</groups>
+			<items>
+				<item type="2" key="mysql.Master_Host" value_type="1">
+					<description>MySQL Slave: Current master host</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Master_Log_File" value_type="1">
+					<description>MySQL Slave: Master log file the I/O thread is reading</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Master_Port" value_type="3">
+					<description>MySQL Slave: The current master port</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Master_User" value_type="1">
+					<description>MySQL Slave: User used to connect to the master</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Read_Master_Log_Pos" value_type="3">
+					<description>MySQL Slave: Log Position in master log of I/O thread</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Relay_Log_File" value_type="1">
+					<description>MySQL Slave: Name of relay log file for SQL thread</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Relay_Log_Pos" value_type="3">
+					<description>MySQL Slave: Position of SQL thread in relay log</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Relay_Log_Space" value_type="3">
+						<description>MySQL Slave: Total combined size of relay logs</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<units>B</units>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Relay_Master_Log_File" value_type="1">
+					<description>MySQL Slave: Name of master binary log file for the SQL thread</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Exec_Master_Log_Pos" value_type="3">
+					<description>MySQL Slave: Position of SQL thread in master's log</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Slave_IO_Running" value_type="3">
+					<description>MySQL Slave: Whether I/O thread has connected to the master</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Slave_IO_State" value_type="1">
+					<description>MySQL Slave: State field of SHOW PROCESSLIST for slave I/O thread</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Slave_SQL_Running" value_type="3">
+					<description>MySQL Slave: Whether the SQL thread is started</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Slave_running" value_type="3">
+					<description>MySQL Slave: SQL and I/O threads running</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Threads_created_outrunning_cache" value_type="3">
+					<description>MySQL Slave: Threads being created faster than can be cached</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+				<item type="2" key="mysql.Seconds_Behind_Master" value_type="3">
+					<description>MySQL Slave: Number of seconds behind master for replication</description>
+					<delay>30</delay>
+					<history>7</history>
+					<trends>365</trends>
+					<formula>1</formula>
+					<applications>
+						<application>MySQL Slave</application>
+					</applications>
+				</item>
+			</items>
+			<triggers>
+				<trigger>
+					<description>Replication SQL slave not running</description>
+					<type>0</type>
+					<expression>{{HOSTNAME}:mysql.Slave_SQL_Running.last(0)}=0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Replication SQL slave has stopped.  Check the binary logs to find the statement that stopped replication.</comments>
+				</trigger>
+				<trigger>
+					<description>Replication I/O slave not running</description>
+					<type>0</type>
+					<expression>{{HOSTNAME}:mysql.Slave_IO_Running.last(0)}=0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Replication I/O slave has stopped.  Check why slave cannot contact the host.</comments>
+				</trigger>
+				<trigger>
+					<description>Replication slave not running</description>
+					<type>0</type>
+					<expression>{{HOSTNAME}:mysql.Slave_running.last(0)}=0</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>Replication slave has stopped</comments>
+				</trigger>
+				<trigger>
+					<description>Replication slave is too far behind master</description>
+					<type>0</type>
+					<expression>{{HOSTNAME}:mysql.Seconds_Behind_Master.last(0)}&gt;450</expression>
+					<url></url>
+					<status>0</status>
+					<priority>2</priority>
+					<comments>The slave is getting too far behind the master (now at {ITEM.LASTVALUE} secs).  Data on the slave is losing it's real-time value.</comments>
+				</trigger>
+				<trigger>
+					<description>Replication slave is too far behind master</description>
+					<type>0</type>
+					<expression>{{HOSTNAME}:mysql.Seconds_Behind_Master.last(0)}&gt;600</expression>
+					<url></url>
+					<status>0</status>
+					<priority>4</priority>
+					<comments>The slave is getting too far behind the master (now at {ITEM.LASTVALUE} secs).  Data on the slave is losing it's real-time value.</comments>
+				</trigger>
+			</triggers>
+		</host>
+	</hosts>
+</zabbix_export>
