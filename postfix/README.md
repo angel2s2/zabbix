@@ -70,6 +70,8 @@ RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 
 
 Импортировать шаблон `templates/postfix.xml` Настройка -> Шаблоны -> Импорт и добавить в шаблон "Узлы сети".
 
+PS: Если postfix в DMZ, за zabbix нет, не забыть сделать проброс порта postfix -> zabbix:10050
+
 > испльзованные материалы
 > + http://www.klipach.com/postfix-monitoring-with-zabbix/
 > + http://middleswarth.net/content/adding-postfix-template-zabbix-20
