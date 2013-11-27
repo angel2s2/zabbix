@@ -49,7 +49,7 @@ RPM:
     DAT2=$(mktemp)
     PFLOGSUMM=/usr/sbin/pflogsumm
     ZABBIX_CONF=/etc/zabbix/zabbix_agentd.conf
-    DEBUG=1
+    DEBUG=0
     
     function zsend {
       key="postfix[`echo "$1" | tr ' -' '_' | tr '[A-Z]' '[a-z]' | tr -cd [a-z_]`]"
