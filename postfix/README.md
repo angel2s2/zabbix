@@ -22,51 +22,17 @@ RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 
 
     yum install zabbix-sender postfix-perl-scripts
 
-Создать файл `/etc/zabbix/scripts/postfix.sh` (см. файл `scripts/postfix.sh`)
-
-    mkdir -p /etc/zabbix/scripts
-    touch /etc/zabbix/scripts/postfix.sh
-    chmod +x /etc/zabbix/scripts/postfix.sh
-
-С кодом
-
-    #!/bin/bash
-    
-    MAILLOG=/var/log/maillog
-    DAT1=/tmp/zabbix-postfix-offset.dat
-    DAT2=$(mktemp)
-    PFLOGSUMM=/usr/sbin/pflogsumm
-    ZABBIX_CONF=/etc/zabbix/zabbix_agentd.conf
-    DEBUG=0
-    
-    function zsend {
-      key="postfix[`echo "$1" | tr ' -' '_' | tr '[A-Z]' '[a-z]' | tr -cd [a-z_]`]"
-      value=`grep -m 1 "$1" $DAT2 | awk '{print $1}'`
-      [ ${DEBUG} -ne 0 ] && echo "Send key "${key}" with value "${value}"" >&2
-      /usr/bin/zabbix_sender -c $ZABBIX_CONF -k "${key}" -o "${value}" 2>&1 >/dev/null
-    }
-    
-    /usr/sbin/logtail -f$MAILLOG -o$DAT1 | $PFLOGSUMM -h 0 -u 0 --no_bounce_detail --no_deferral_detail --no_reject_detail --no_no_msg_size --no_smtpd_warnings > $DAT2
-    
-    zsend received
-    zsend delivered
-    zsend forwarded
-    zsend deferred
-    zsend bounced
-    zsend rejected
-    zsend held
-    zsend discarded
-    zsend "reject warnings"
-    zsend "bytes received"
-    zsend "bytes delivered"
-    zsend senders
-    zsend recipients
-    
-    rm $DAT2
+Скрипт `scripts/postfix.sh` положить в `/etc/zabbix/scripts/postfix.sh` и сделать исполняемым `chmod +x /etc/zabbix/scripts/postfix.shi`.
 
 Добавить это скрипт в crontab
 
     echo '* * * * * root   /etc/zabbix/scripts/postfix.sh' >> /etc/crontab
+
+В конфиге zabbix-агента `/etc/zabbix/zabbix_agentd.conf` прописать:
+    
+    ServerActive=<ip zabbix-сервера>
+    Hostname=<fqdn postfix-сервера>
+
 
 Импортировать шаблон `templates/postfix.xml` Настройка -> Шаблоны -> Импорт и добавить в шаблон "Узлы сети".
 
