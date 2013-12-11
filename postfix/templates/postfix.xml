@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-12-10T13:52:25Z</date>
+    <date>2013-12-11T09:58:18Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1321,7 +1321,7 @@
                 </graph_item>
                 <graph_item>
                     <sortorder>0</sortorder>
-                    <drawtype>4</drawtype>
+                    <drawtype>0</drawtype>
                     <color>00DDDD</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
