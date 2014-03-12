@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-02-13T15:49:34Z</date>
+    <date>2014-03-12T10:01:14Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1502,7 +1502,7 @@
     <triggers>
         <trigger>
             <expression>{Template App Bind:proc.num[named].last(0)}&lt;1</expression>
-            <name>Bind is not running on {HOSTNAME}</name>
+            <name>{HOST.NAME} - Bind is not running</name>
             <url/>
             <status>0</status>
             <priority>4</priority>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-12-11T09:58:18Z</date>
+    <date>2014-03-12T10:02:39Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -985,7 +985,7 @@
     <triggers>
         <trigger>
             <expression>{Template App Postfix:proc.num[,postfix].last(0,10)}=0</expression>
-            <name>Postfix is down on {HOSTNAME}</name>
+            <name>{HOST.NAME} - Postfix is down</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -995,7 +995,7 @@
         </trigger>
         <trigger>
             <expression>{Template App Postfix:postfix.queue.last(0)}&gt;20</expression>
-            <name>Postfix queue is over 20 on {HOSTNAME}</name>
+            <name>{HOST.NAME} - Postfix queue is over 20</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -1003,14 +1003,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Postfix queue is over 50 on {HOSTNAME}</name>
+                    <name>{HOST.NAME} - Postfix queue is over 50</name>
                     <expression>{Template App Postfix:postfix.queue.last(0)}&gt;50</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template App Postfix:postfix.queue.last(0)}&gt;50</expression>
-            <name>Postfix queue is over 50 on {HOSTNAME}</name>
+            <name>{HOST.NAME} - Postfix queue is over 50</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -1018,14 +1018,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Postfix queue is over 200 on {HOSTNAME}</name>
+                    <name>{HOST.NAME} - Postfix queue is over 200</name>
                     <expression>{Template App Postfix:postfix.queue.last(0)}&gt;200</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template App Postfix:postfix.queue.last(0)}&gt;200</expression>
-            <name>Postfix queue is over 200 on {HOSTNAME}</name>
+            <name>{HOST.NAME} - Postfix queue is over 200</name>
             <url/>
             <status>0</status>
             <priority>5</priority>
@@ -1035,7 +1035,7 @@
         </trigger>
         <trigger>
             <expression>{Template App Postfix:proc.num[,postgrey].last(0)}=0</expression>
-            <name>Postgrey is down on {HOSTNAME}</name>
+            <name>{HOST.NAME} - Postgrey is down</name>
             <url/>
             <status>1</status>
             <priority>3</priority>
