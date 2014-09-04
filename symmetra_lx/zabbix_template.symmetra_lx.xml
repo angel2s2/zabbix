@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-04T08:54:40Z</date>
+    <date>2014-09-04T13:37:20Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template SNMP Symmetra LX</template>
-            <name>Template SNMP Symmetra LX</name>
+            <template>Template SNMP Symmetra LX 16000</template>
+            <name>Template SNMP Symmetra LX 16000</name>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -590,7 +590,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SNMP Symmetra LX:symmetra.internal_temperature.last()}&gt;50</expression>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;50</expression>
             <name>CRITICAL :: Symmetra Internal Temperature &gt; 50 °C</name>
             <url/>
             <status>0</status>
@@ -600,7 +600,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Symmetra LX:symmetra.internal_temperature.last()}&gt;40</expression>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;40</expression>
             <name>Symmetra Internal Temperature &gt; 40 °C</name>
             <url/>
             <status>0</status>
@@ -610,12 +610,12 @@
             <dependencies>
                 <dependency>
                     <name>CRITICAL :: Symmetra Internal Temperature &gt; 50 °C</name>
-                    <expression>{Template SNMP Symmetra LX:symmetra.internal_temperature.last()}&gt;50</expression>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;50</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Symmetra LX:symmetra.runtime_remaining.last()}&lt;11</expression>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;11</expression>
             <name>Symmetra Runtime Remaining less 10 minutes</name>
             <url/>
             <status>0</status>
@@ -625,7 +625,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Symmetra LX:symmetra.runtime_remaining.last()}&lt;21</expression>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;21</expression>
             <name>Symmetra Runtime Remaining less 20 minutes</name>
             <url/>
             <status>0</status>
@@ -635,9 +635,187 @@
             <dependencies>
                 <dependency>
                     <name>Symmetra Runtime Remaining less 10 minutes</name>
-                    <expression>{Template SNMP Symmetra LX:symmetra.runtime_remaining.last()}&lt;11</expression>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;11</expression>
                 </dependency>
             </dependencies>
         </trigger>
     </triggers>
+    <graphs>
+        <graph>
+            <name>APC Symmetra LX 16000</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>0</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>0</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>C80000</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.actual_battery_bus_voltage</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>10</sortorder>
+                    <drawtype>2</drawtype>
+                    <color>00C800</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.battery_capacity</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>0000C8</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.input_frequency</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>C800C8</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.input_voltage_l1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>00C8C8</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.input_voltage_l2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>C8C800</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.input_voltage_l3</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>12</sortorder>
+                    <drawtype>2</drawtype>
+                    <color>C8C8C8</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.internal_temperature</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>960000</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.nominal_battery_voltage</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>8</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>009600</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.output_current</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>7</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>000096</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.output_frequency</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>9</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>960096</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.output_load</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>6</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>009696</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.output_voltage</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>11</sortorder>
+                    <drawtype>5</drawtype>
+                    <color>969600</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Symmetra LX 16000</host>
+                        <key>symmetra.runtime_remaining</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
 </zabbix_export>

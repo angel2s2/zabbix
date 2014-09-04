@@ -1,4 +1,4 @@
-# zabbix templates templates
+# zabbix templates 
 
 > Справедливо для DEB и RPM дистрибутивов
 
@@ -17,6 +17,9 @@
 
 ## Bind / Named
 
+## APC Symmetra LX 16000
+
+## APC NetBotz Rack Monitor 200
 
 
 ### Zabbix repository
