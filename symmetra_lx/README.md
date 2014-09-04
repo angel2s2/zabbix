@@ -1,6 +1,8 @@
 # zabbix templates
 
 ## APC Symmetra LX
+Я использовал APC Symmetra LX 16000. Возможно на других Symmetra LX тоже будет работать. Проверить негде.
+
 
 ### Мониторинг параметров:
 + Actual Battery Bus Voltage
