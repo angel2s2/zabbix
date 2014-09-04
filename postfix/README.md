@@ -38,7 +38,7 @@ RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 
 
 PS: Если postfix в DMZ, за zabbix нет, не забыть сделать проброс порта postfix -> zabbix:10050
 
-PPS: `zabbix_screens.postfix.xml` - комплексные экраны.
+PPS: `templates/zabbix_screens.postfix.xml` - комплексные экраны.
 
 
 > испльзованные материалы

@@ -32,7 +32,7 @@
     Для in и out: A, AAAA, ANY, CNAME, MX, NS, PTR, SOA, SPF, TXT
     Для query: Success, AuthAns, NoauthAns, Referral, Nxrrset, SERVFAIL, FORMERR, NXDOMAIN, Recursion, Duplicate, Dropped, Failure
 
-PS: `zabbix_screens.bind.xml` - комплесные экраны.
+PS: `templates/zabbix_screens.bind.xml` - комплесные экраны.
 
 
 > использованные материалы
