@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-04T13:37:20Z</date>
+    <date>2014-09-05T11:34:11Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -590,18 +590,103 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;50</expression>
-            <name>CRITICAL :: Symmetra Internal Temperature &gt; 50 °C</name>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;30</expression>
+            <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 30%</name>
             <url/>
             <status>0</status>
             <priority>5</priority>
+            <description/>
+            <type>1</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;50</expression>
+            <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 50%</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>1</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 30%</name>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;30</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;80</expression>
+            <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 80%</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 50%</name>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;50</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;95</expression>
+            <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 95%</name>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} :: Symmetra Battery Capacity &lt; 80%</name>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.battery_capacity.last()}&lt;80</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.input_frequency.last()}&lt;49 | {Template SNMP Symmetra LX 16000:symmetra.output_frequency.last()}&lt;49</expression>
+            <name>{HOST.NAME} :: Symmetra Frequency &lt; 49 Hz</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.input_frequency.last()}&gt;51 | {Template SNMP Symmetra LX 16000:symmetra.output_frequency.last()}&gt;51</expression>
+            <name>{HOST.NAME} :: Symmetra Frequency &gt; 51 Hz</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.input_voltage_l1.last()}&lt;215 | {Template SNMP Symmetra LX 16000:symmetra.input_voltage_l2.last()}&lt;215 | {Template SNMP Symmetra LX 16000:symmetra.input_voltage_l3.last()}&lt;215</expression>
+            <name>{HOST.NAME} :: Symmetra Input Voltage &lt; 215 VAC</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>1</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.input_voltage_l1.last()}&gt;240 | {Template SNMP Symmetra LX 16000:symmetra.input_voltage_l2.last()}&gt;240 | {Template SNMP Symmetra LX 16000:symmetra.input_voltage_l3.last()}&gt;240</expression>
+            <name>{HOST.NAME} :: Symmetra Input Voltage &gt; 240 VAC</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
             <description/>
             <type>1</type>
             <dependencies/>
         </trigger>
         <trigger>
             <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;40</expression>
-            <name>Symmetra Internal Temperature &gt; 40 °C</name>
+            <name>{HOST.NAME} :: Symmetra Internal Temperature &gt; 40 °C</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -609,14 +694,14 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Symmetra Internal Temperature &gt; 50 °C</name>
-                    <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;50</expression>
+                    <name>{HOST.NAME} :: Symmetra Internal Temperature &gt; 45 °C</name>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;45</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;11</expression>
-            <name>Symmetra Runtime Remaining less 10 minutes</name>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.internal_temperature.last()}&gt;45</expression>
+            <name>{HOST.NAME} :: Symmetra Internal Temperature &gt; 45 °C</name>
             <url/>
             <status>0</status>
             <priority>5</priority>
@@ -625,8 +710,58 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;21</expression>
-            <name>Symmetra Runtime Remaining less 20 minutes</name>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.output_current.last()}&gt;15</expression>
+            <name>{HOST.NAME} :: Symmetra Output Current &gt; 15 Amps</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.output_load.last()}&gt;3.5</expression>
+            <name>{HOST.NAME} :: Symmetra Output Load &gt; 3.5 kVA</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.output_voltage.last()}&lt;220</expression>
+            <name>{HOST.NAME} :: Symmetra Output Voltage &lt; 220 VAC</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>1</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.output_voltage.last()}&gt;235</expression>
+            <name>{HOST.NAME} :: Symmetra Output Voltage &gt; 235 VAC</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>1</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;10</expression>
+            <name>{HOST.NAME} :: Symmetra Runtime Remaining &lt; 10 min</name>
+            <url/>
+            <status>0</status>
+            <priority>5</priority>
+            <description/>
+            <type>1</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;20</expression>
+            <name>{HOST.NAME} :: Symmetra Runtime Remaining &lt; 20 min</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -634,8 +769,23 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>Symmetra Runtime Remaining less 10 minutes</name>
-                    <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;11</expression>
+                    <name>{HOST.NAME} :: Symmetra Runtime Remaining &lt; 10 min</name>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;10</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;30</expression>
+            <name>{HOST.NAME} :: Symmetra Runtime Remaining &lt; 30 min</name>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} :: Symmetra Runtime Remaining &lt; 20 min</name>
+                    <expression>{Template SNMP Symmetra LX 16000:symmetra.runtime_remaining.last()}&lt;20</expression>
                 </dependency>
             </dependencies>
         </trigger>
