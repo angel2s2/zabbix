@@ -31,7 +31,7 @@ RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 
 В конфиге zabbix-агента `/etc/zabbix/zabbix_agentd.conf` прописать:
     
     ServerActive=<ip zabbix-сервера>
-    Hostname=<fqdn postfix-сервера>
+    Hostname=<имя наблюдаемого узла сети (зарегистрированное в веб-интерфейсе Zabbix)>
 
 
 Импортировать шаблон `templates/postfix.xml` Настройка -> Шаблоны -> Импорт и добавить в шаблон "Узлы сети".
