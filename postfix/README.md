@@ -22,7 +22,9 @@ RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 
 
     yum install zabbix-sender postfix-perl-scripts
 
-Скрипт `scripts/postfix.sh` положить в `/etc/zabbix/scripts/postfix.sh` и сделать исполняемым `chmod +x /etc/zabbix/scripts/postfix.shi`.
+Скрипт `scripts/postfix.sh` положить в `/etc/zabbix/scripts/postfix.sh` и сделать исполняемым:
+
+    chmod +x /etc/zabbix/scripts/postfix.sh
 
 Добавить это скрипт в crontab
 
@@ -36,7 +38,7 @@ RPM: logtail не нашел... взял файл /usr/sbin/logtail из Debian 
 
 Импортировать шаблон `templates/postfix.xml` Настройка -> Шаблоны -> Импорт и добавить в шаблон "Узлы сети".
 
-PS: Если postfix в DMZ, за zabbix нет, не забыть сделать проброс порта postfix -> zabbix:10050
+PS: Если postfix в DMZ, а zabbix нет, не забыть сделать проброс порта postfix -> zabbix:10050
 
 PPS: `templates/zabbix_screens.postfix.xml` - комплексные экраны.
 
