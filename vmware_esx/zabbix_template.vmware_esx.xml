@@ -172,15 +172,15 @@
             <macros>
                 <macro>
                     <macro>{$PASSWORD}</macro>
-                    <value>iITxx9dc45fg43</value>
+                    <value>pa$$word</value>
                 </macro>
                 <macro>
                     <macro>{$URL}</macro>
-                    <value>https://10.1.1.140/sdk</value>
+                    <value>https://10.111.111.111/sdk</value>
                 </macro>
                 <macro>
                     <macro>{$USERNAME}</macro>
-                    <value>cityhall\shagrov</value>
+                    <value>domain\username</value>
                 </macro>
             </macros>
             <templates/>
