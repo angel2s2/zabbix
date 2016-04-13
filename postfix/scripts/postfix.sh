@@ -18,7 +18,7 @@ function zsend {
   fi
 }
 
-/usr/sbin/logtail -f$MAILLOG -o$DAT1 | $PFLOGSUMM -h 0 -u 0 --smtpd_stats --no_bounce_detail --no_deferral_detail --no_reject_detail --no_no_msg_size --no_smtpd_warnings > $DAT2
+/usr/sbin/logtail -f$MAILLOG -o$DAT1 | $PFLOGSUMM -h 0 -u 0 --smtpd-stats --bounce-detail=0 --deferral-detail=0 --reject-detail=0 --no-no-msg-size --smtpd-warning-detail=0 > $DAT2
 
 zsend received
 zsend delivered
