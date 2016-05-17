@@ -13,7 +13,9 @@
 
 ###### Скрипт check_esxi_hardware.py
 Чтобы работал `check_esxi_hardware.py` нужно поставить [PyWBEM](http://pywbem.sourceforge.net/)
-`aptitude install python-pywbem`
+
+  aptitude install python-pywbem
+
 Требуется python версии 2.6-2.7; в python 3+ работать не будет.
 
 ### Важно
