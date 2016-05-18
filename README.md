@@ -4,46 +4,46 @@
 
 > zabbix-agent должен быть установлен на наблюдаемом узле
 
-### Apache
+### [Apache](https://github.com/angel2s2/zabbix/tree/master/apache)
 * Забирает статистику у mod_status
 
-### bareos
+### [bareos](https://github.com/angel2s2/zabbix/tree/master/bareos)
 * Запущены ли службы
 * Открыты ли порты
 
-### bind/named
+### [bind/named](https://github.com/angel2s2/zabbix/tree/master/bind)
 * Входящие и исходящие запросы (A, CNAME, MX, etc)
 * Статистика запросов (Success, SERVFAIL, NXDOMAIN, etc)
 
-### linux
+### [linux](https://github.com/angel2s2/zabbix/tree/master/linux)
 * Стандартные шаблоны с добавленными элементами данных и триггерами для мониторинга текущего времени на серверах.
 
-### mail
+### [mail](https://github.com/angel2s2/zabbix/tree/master/mail)
 * Изменения конфигов courier-imap, spamassassin, clamav, amavisd, authlib, sasl2 и других
 * Превышение количества подключений
 
-### misc_templates
+### [Misc Templates](https://github.com/angel2s2/zabbix/tree/master/misc_templates)
 * Всяко-разно для себя
 
-### MySQL
+### [MySQL](https://github.com/angel2s2/zabbix/tree/master/mysql)
 * Разные проверки по мускулу
 
-### APC NetBotz Rack Monitor 200
+### [APC NetBotz Rack Monitor 200](https://github.com/angel2s2/zabbix/tree/master/netbotz_rack_monitor_200)
 * Температура
 * Влажность
 
-### Nginx
+### [Nginx](https://github.com/angel2s2/zabbix/tree/master/nginx)
 * Соединения, запросы, чтение, запись, ожидание и т.п.
 
-### not_tested
+### [Not tested](https://github.com/angel2s2/zabbix/tree/master/not_tested)
 * Еще не тестировал и не разбирался
 
-### Postfix
+### [Postfix](https://github.com/angel2s2/zabbix/tree/master/postfix)
 * Очередь
 * Кол-во полученных и отправленных байт
 * Кол-во олученных и отправленных писем и другие параметры
 
-### APC Symmetra LX 16000
+### [APC Symmetra LX 16000](https://github.com/angel2s2/zabbix/tree/master/symmetra_lx)
 * Actual Battery Bus Voltage
 * Battery Capacity
 * Input Frequency
@@ -59,15 +59,15 @@
 * Runtime Remaining
 * etc
 
-### vmware_esx
+### [VMWare ESX](https://github.com/angel2s2/zabbix/tree/master/vmware_esx)
 * Старый шаблон
 
-### vmware_esxi
+### [VMWare ESXi](https://github.com/angel2s2/zabbix/tree/master/vmware_esxi)
 * Обнаружение гипервизоров и ВМ
 * Мониторинг разных параметров
 * Иногда не работает :( (пока не понял причину)
 
-### Windows
+### [Windows](https://github.com/angel2s2/zabbix/tree/master/windows)
 * Стандартные шаблоны с добавленными элементами данных и триггерами для мониторинга текущего времени на серверах.
 * Шаблон, для мониторинга резервного копирования серверов с помощью "Система архивации данных Windows Server".
 
