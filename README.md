@@ -4,25 +4,75 @@
 
 > zabbix-agent должен быть установлен на наблюдаемом узле
 
-## Apache
+### Apache
+* Забирает статистику у mod_status
 
-## Nginx
+### bareos
+* Запущены ли службы
+* Открыты ли порты
 
-## MySQL
+### bind/named
+* Входящие и исходящие запросы (A, CNAME, MX, etc)
+* Статистика запросов (Success, SERVFAIL, NXDOMAIN, etc)
 
-## Postfix
-* Мониторинг очереди
-* Мониторинг полученных, отправленных байт
-* Мониторинг полученных, отправленных писем и других параметров
+### linux
+* Стандартные шаблоны с добавленными элементами данных и триггерами для мониторинга текущего времени на серверах.
 
-## Bind / Named
+### mail
+* Изменения конфигов courier-imap, spamassassin, clamav, amavisd, authlib, sasl2 и других
+* Превышение количества подключений
 
-## APC Symmetra LX 16000
+### misc_templates
+* Всяко-разно для себя
 
-## APC NetBotz Rack Monitor 200
+### MySQL
+* Разные проверки по мускулу
+
+### APC NetBotz Rack Monitor 200
+* Температура
+* Влажность
+
+### Nginx
+* Соединения, запросы, чтение, запись, ожидание и т.п.
+
+### not_tested
+* Еще не тестировал и не разбирался
+
+### Postfix
+* Очередь
+* Кол-во полученных и отправленных байт
+* Кол-во олученных и отправленных писем и другие параметры
+
+### APC Symmetra LX 16000
+* Actual Battery Bus Voltage
+* Battery Capacity
+* Input Frequency
+* Input Voltage L1
+* Input Voltage L2
+* Input Voltage L3
+* Internal Temperature
+* Nominal Battery Voltage
+* Output Current
+* Output Frequency
+* Output Load
+* Output Voltage
+* Runtime Remaining
+* etc
+
+### vmware_esx
+* Старый шаблон
+
+### vmware_esxi
+* Обнаружение гипервизоров и ВМ
+* Мониторинг разных параметров
+* Иногда не работает :( (пока не понял причину)
+
+### Windows
+* Стандартные шаблоны с добавленными элементами данных и триггерами для мониторинга текущего времени на серверах.
+* Шаблон, для мониторинга резервного копирования серверов с помощью "Система архивации данных Windows Server".
 
 
-### Zabbix repository
+#### Zabbix repository
 ##### 2.2
 zabbix repo DEB:
     deb http://repo.zabbix.com/zabbix/2.2/debian wheezy main
@@ -39,7 +89,7 @@ epel: `rpm -ihv http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noa
     wget -qO- http://repo.zabbix.com/zabbix-official-repo.key | apt-key add -
 
 
-### Переименование шаблона до импорта
-Открыть `xml`-файл шаблона, найти в начале файле (обычно первые 10-15 строка) строку вида `<template>Template_Name</template>` и далее сделать поиск по всему файлу по подстроке `Template_Name` и заменить на, например, `Template_Name_2`. После чего можно импортировать "переименованный" шаблон, отредактировать в интерфейсе заббикса и подключить к нужным узлам/шаблонам.
+#### Переименование шаблона до импорта
+Открыть `xml`-файл шаблона, найти в начале файле (обычно первые 10-15 строк) строку вида `<template>Template_Name</template>` и далее сделать поиск по всему файлу по подстроке `Template_Name` и заменить на, например, `Template_Name_2`. После чего можно импортировать "переименованный" шаблон, отредактировать в интерфейсе заббикса и подключить к нужным узлам/шаблонам.
 
 
