@@ -18,6 +18,8 @@
 + Output Load
 + Output Voltage
 + Runtime Remaining
++ Alarms Present
++ Seconds On Battery
 
 
 `zabbix_screens.symmetra_lx.xml` - файл, для импорта комплексных экранов.
