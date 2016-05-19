@@ -22,7 +22,5 @@
 + Seconds On Battery
 
 
-`zabbix_screens.symmetra_lx.xml` - файл, для импорта комплексных экранов.
-
-`zabbix_hosts.symmetra_lx.xml` - файл, для импорта комплексных экранов, на которых отображаются данные сразу с двух симметр. Я не нашел, как такое сделать в шаблоне. Будут импортированы два хоста. Необходим для `zabbix_screens.symmetra_lx.xml`.
+`zabbix_screens.symmetra_lx.xml` - комплексные экраны
 
