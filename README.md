@@ -44,18 +44,8 @@
 * Кол-во олученных и отправленных писем и другие параметры
 
 ### [APC Symmetra LX 16000](https://github.com/angel2s2/zabbix/tree/master/symmetra_lx)
-* Actual Battery Bus Voltage
 * Battery Capacity
-* Input Frequency
-* Input Voltage L1
-* Input Voltage L2
-* Input Voltage L3
 * Internal Temperature
-* Nominal Battery Voltage
-* Output Current
-* Output Frequency
-* Output Load
-* Output Voltage
 * Runtime Remaining
 * etc
 
