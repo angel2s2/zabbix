@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-05-17T13:44:14Z</date>
+    <date>2016-06-16T16:01:58Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template AgentTrapper WindowsBackup</template>
-            <name>Template AgentTrapper WindowsBackup</name>
+            <template>Template Windows Backup</template>
+            <name>Template Windows Backup</name>
             <description/>
             <groups>
                 <group>
@@ -118,7 +118,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template AgentTrapper WindowsBackup:winbackup.lasterror.diff(0)}=1 and {Template AgentTrapper WindowsBackup:winbackup.lasterror.regexp(^0$)}=0</expression>
+            <expression>{Template Windows Backup:winbackup.lasterror.diff(0)}=1 and {Template Windows Backup:winbackup.lasterror.regexp(^0$)}=0</expression>
             <name>A backup anomoly was logged during the last backup</name>
             <url/>
             <status>0</status>
@@ -128,20 +128,30 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template AgentTrapper WindowsBackup:winbackup.status.str(successfully)}=1</expression>
+            <expression>not ({Template Windows Backup:winbackup.status.str(Finished successfully)}=1) or ({Template Windows Backup:winbackup.status.nodata(2d)}=1)</expression>
             <name>A backup has completed successfully</name>
             <url/>
             <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>not ({Template Windows Backup:winbackup.status.str(successfully)}=1)</expression>
+            <name>A backup has completed successfully [OLD]</name>
+            <url/>
+            <status>1</status>
             <priority>0</priority>
             <description/>
             <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template AgentTrapper WindowsBackup:winbackup.status.nodata(172800)}=1</expression>
-            <name>No backup status reported in last 48 hours</name>
+            <expression>{Template Windows Backup:winbackup.status.nodata(172800)}=1</expression>
+            <name>No backup status reported in last 48 hours [OLD]</name>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>3</priority>
             <description>No backup status has been logged in the last 48 hours.</description>
             <type>0</type>
