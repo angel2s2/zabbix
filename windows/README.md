@@ -29,3 +29,10 @@
 
 src https://www.zabbix.org/wiki/Monitoring_Windows_2008,_2008R2,_2012_Server_backups
 
+
+UPD:
++ Триггеры "A backup has completed successfully" и "No backup status reported in last 48 hours" объедиены в один "A backup has completed successfully".
++ Теперь триггер "A backup has completed successfully" примет статус ПРОБЛЕМА только если не было данных в течение 2 дней. Если же бэкап прошел успешно, триггер будет в статусе "ОК".
++ Старый триггер "A backup has completed successfully" отключен и переименован в "A backup has completed successfully [OLD]".
++ Старый триггер "No backup status reported in last 48 hours" отключен и переименован в "No backup status reported in last 48 hours [OLD]".
+
