@@ -24,7 +24,7 @@
             </applications>
             <items>
                 <item>
-                    <name>Humidity Int Sensor (427a)</name>
+                    <name>Humidity Int Sensor</name>
                     <type>1</type>
                     <snmp_community>zabbix</snmp_community>
                     <multiplier>0</multiplier>
@@ -67,7 +67,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Temperature Ext Sensor 1 (427a)</name>
+                    <name>Temperature Ext Sensor 1</name>
                     <type>1</type>
                     <snmp_community>zabbix</snmp_community>
                     <multiplier>0</multiplier>
@@ -110,7 +110,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Temperature Ext Sensor 2 (427a)</name>
+                    <name>Temperature Ext Sensor 2</name>
                     <type>1</type>
                     <snmp_community>zabbix</snmp_community>
                     <multiplier>0</multiplier>
@@ -153,7 +153,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Temperature Ext Sensor 3 (521)</name>
+                    <name>Temperature Ext Sensor 3</name>
                     <type>1</type>
                     <snmp_community>zabbix</snmp_community>
                     <multiplier>0</multiplier>
@@ -196,7 +196,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Temperature Ext Sensor 4 (521)</name>
+                    <name>Temperature Ext Sensor 4</name>
                     <type>1</type>
                     <snmp_community>zabbix</snmp_community>
                     <multiplier>0</multiplier>
@@ -239,7 +239,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Temperature Int Sensor (427a)</name>
+                    <name>Temperature Int Sensor</name>
                     <type>1</type>
                     <snmp_community>zabbix</snmp_community>
                     <multiplier>0</multiplier>
@@ -291,7 +291,7 @@
     <triggers>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.humidity.intsensor.last()}&lt;15</expression>
-            <name>CRITICAL :: Humidity on intsensor (427a) &lt; 15 %RH</name>
+            <name>CRITICAL :: Humidity on intsensor &lt; 15 %RH</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -301,7 +301,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.humidity.intsensor.last()}&gt;70</expression>
-            <name>CRITICAL :: Humidity on intsensor (427a) &gt; 70 %RH</name>
+            <name>CRITICAL :: Humidity on intsensor &gt; 70 %RH</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -311,7 +311,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor1.last()}&gt;30</expression>
-            <name>CRITICAL :: Temperature on extsensor 1 (427a) &gt; 30 °C</name>
+            <name>CRITICAL :: Temperature on extsensor 1 &gt; 30 °C</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -321,7 +321,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor2.last()}&gt;30</expression>
-            <name>CRITICAL :: Temperature on extsensor 2 (427a) &gt; 30 °C</name>
+            <name>CRITICAL :: Temperature on extsensor 2 &gt; 30 °C</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -331,7 +331,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor3.last()}&gt;30</expression>
-            <name>CRITICAL :: Temperature on extsensor 3 (521) &gt; 30 °C</name>
+            <name>CRITICAL :: Temperature on extsensor 3 &gt; 30 °C</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -341,7 +341,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor4.last()}&gt;30</expression>
-            <name>CRITICAL :: Temperature on extsensor 4 (521) &gt; 30 °C</name>
+            <name>CRITICAL :: Temperature on extsensor 4 &gt; 30 °C</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -351,7 +351,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.intsensor.last()}&gt;30</expression>
-            <name>CRITICAL :: Temperature on intsensor (427a) &gt; 30 °C</name>
+            <name>CRITICAL :: Temperature on intsensor &gt; 30 °C</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -361,7 +361,7 @@
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.humidity.intsensor.last()}&gt;55</expression>
-            <name>Humidity on intsensor (427a) &gt; 55 %RH</name>
+            <name>Humidity on intsensor &gt; 55 %RH</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -369,14 +369,14 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Humidity on intsensor (427a) &gt; 70 %RH</name>
+                    <name>CRITICAL :: Humidity on intsensor &gt; 70 %RH</name>
                     <expression>{netbotz:netbotz.humidity.intsensor.last()}&gt;70</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor1.last()}&gt;25</expression>
-            <name>Temperature on extsensor 1 (427a) &gt; 25 °C</name>
+            <name>Temperature on extsensor 1 &gt; 25 °C</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -384,14 +384,14 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Temperature on extsensor 1 (427a) &gt; 30 °C</name>
+                    <name>CRITICAL :: Temperature on extsensor 1 &gt; 30 °C</name>
                     <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor1.last()}&gt;30</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor2.last()}&gt;25</expression>
-            <name>Temperature on extsensor 2 (427a) &gt; 25 °C</name>
+            <name>Temperature on extsensor 2 &gt; 25 °C</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -399,14 +399,14 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Temperature on extsensor 2 (427a) &gt; 30 °C</name>
+                    <name>CRITICAL :: Temperature on extsensor 2 &gt; 30 °C</name>
                     <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor2.last()}&gt;30</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor3.last()}&gt;25</expression>
-            <name>Temperature on extsensor 3 (521) &gt; 25 °C</name>
+            <name>Temperature on extsensor 3 &gt; 25 °C</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -414,14 +414,14 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Temperature on extsensor 3 (521) &gt; 30 °C</name>
+                    <name>CRITICAL :: Temperature on extsensor 3 &gt; 30 °C</name>
                     <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor3.last()}&gt;30</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor4.last()}&gt;26</expression>
-            <name>Temperature on extsensor 4 (521) &gt; 26 °C</name>
+            <name>Temperature on extsensor 4 &gt; 26 °C</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -429,14 +429,14 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Temperature on extsensor 4 (521) &gt; 30 °C</name>
+                    <name>CRITICAL :: Temperature on extsensor 4 &gt; 30 °C</name>
                     <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.extsensor4.last()}&gt;30</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
             <expression>{Template SNMP NetBotz Rack Monitor 200:netbotz.temperature.intsensor.last()}&gt;27</expression>
-            <name>Temperature on intsensor (427a) &gt; 27 °C</name>
+            <name>Temperature on intsensor &gt; 27 °C</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -444,7 +444,7 @@
             <type>1</type>
             <dependencies>
                 <dependency>
-                    <name>CRITICAL :: Temperature on intsensor (427a) &gt; 30 °C</name>
+                    <name>CRITICAL :: Temperature on intsensor &gt; 30 °C</name>
                     <expression>{netbotz:netbotz.temperature.intsensor.last()}&gt;30</expression>
                 </dependency>
             </dependencies>
