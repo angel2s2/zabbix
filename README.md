@@ -49,6 +49,10 @@
 * Runtime Remaining
 * etc
 
+### [Syslog](https://github.com/angel2s2/zabbix/tree/master/syslog)
+* Привязка syslog-сообщений к соответствующим узлам сети
+* Автоматическое крепление к карте
+
 ### [VMWare ESX](https://github.com/angel2s2/zabbix/tree/master/vmware_esx)
 * Старый шаблон
 

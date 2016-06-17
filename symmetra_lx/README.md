@@ -24,3 +24,14 @@
 
 `zabbix_screens.symmetra_lx.xml` - комплексные экраны
 
+### Мониторинг через Syslog
+Выполнить настройки описанные в [syslog](https://github.com/angel2s2/zabbix/tree/master/syslog).
+Настроить пересылку логов на symmetra lx:
+* В `Logs -> Syslog -> servers -> Add Server` указать адрес rsyslog-сервера, порт, язык и протокол.
+* В `Logs -> Syslog -> settings` поставить галку `Message Generation`, в `Facility Code` выбрать источник, например, local4.
+
+В шаблон `Template Syslog` добавить нужные триггеры на основе функций `iregxp()`, `regxp()`, `str()`. Например, триггер с таким выражением сработает, если в течение 7 дней self-test ни разу не завершится успешно (или ни разу не запустится):
+
+    not ({Template Syslog:syslog.str(UPS: Passed a self-test.)}=1) or ({Template Syslog:syslog.nodata(7d)}=1)
+
+
