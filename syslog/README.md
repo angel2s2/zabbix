@@ -42,7 +42,7 @@
 
 Содать пользователя, например, `api_user` типа `Zabbix Super Administrator`, т.е. с правом записи в узлы сети. Я его так же поместил в группу `No access to the frontend`.
 
-Закинуть на zabbix-сервер файлы `extensionscripts/zabbix_syslog_lkp_host.pl` и `extensionscripts/zabbix_syslog_lkp_host.cfg`. Далее (на примере debian):
+Закинуть на zabbix-сервер файлы `extensionscripts/zabbix_syslog_lkp_host.pl` и `extensionscripts/zabbix_syslog_lkp_host.cfg`. Далее:
 
     mkdir /etc/zabbix/extensionscripts
     mv zabbix_syslog_lkp_host.pl zabbix_syslog_lkp_host.cfg /etc/zabbix/extensionscripts/
@@ -59,7 +59,7 @@
 ## Автоматическое крепление к карте
 Можно сделать, чтобы при клике по узлу сети на карте в меню был пункт `Syslog`, позволяющий быстро перейти в `Последние данные -> нужный узел сети -> Syslog`, т.е. посмотреть полученные syslog-сообщения.
 
-Закинуть на zabbix-сервер файл `extensionscripts/zabbix_syslog_create_urls.pl`. Далее (на примере debian):
+Закинуть на zabbix-сервер файл `extensionscripts/zabbix_syslog_create_urls.pl`. Далеe:
 
     mv zabbix_syslog_create_urls.pl /etc/zabbix/extensionscripts/
     chmod +x /etc/zabbix/extensionscripts/zabbix_syslog_create_urls.pl
