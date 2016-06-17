@@ -88,3 +88,4 @@
 В `Logs -> Syslog -> servers -> Add Server` указать адрес rsyslog-сервера, порт, язык и протокол.
 В `Logs -> Syslog -> settings` поставить галку `Message Generation`, в `Facility Code` выбрать источник, например, local4.
 
+src https://habrahabr.ru/company/zabbix/blog/252915/
