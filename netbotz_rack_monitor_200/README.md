@@ -11,5 +11,5 @@
 
 ### Шаблоны
 `zabbix_template.netbotz_rack_monitor_200.xml` - включает зависимости триггеров
-`zabbix_template.netbotz_rack_monitor_200.no_deps.xml` - без зависимостей (у одного товарище с зависимости не хотело импортироваться)
+`zabbix_template.netbotz_rack_monitor_200.no_deps.xml` - без зависимостей (у одного товарища с зависимостями не хотело импортироваться)
 
