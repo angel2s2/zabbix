@@ -7,6 +7,6 @@
 Шаблон. Мониторинг ESXi по SNMP. https://www.zabbix.com/forum/showthread.php?t=43562
 
 ### zabbix-vmwareesx
-Шаблон. Мониторинг ESXi по SNMP. https://github.com/jensdepuydt/zabbix-vmwareesx
+Шаблон. Мониторинг ESXi 5.5 по SNMP. https://github.com/jensdepuydt/zabbix-vmwareesx
 
 
