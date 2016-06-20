@@ -5,6 +5,8 @@ Templates
 
 **Полезные доки**
 
+Интересные заметки (еще не вчитывался)
+http://wiki.enchtex.info/tag/zabbix?do=showtag&tag=zabbix
 
 Zabbix Templates
 http://www.zabbix.org/wiki/Zabbix_Templates
