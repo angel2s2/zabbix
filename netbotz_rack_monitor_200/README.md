@@ -3,13 +3,9 @@
 ## APC NetBotz Rack Monitor 200
 
 ### Мониторинг параметров
-+ Humidity & Temperature Sensor 1
-+ Temperature Sensor 1 
-+ Temperature Sensor 2 
-+ Temperature Sensor 3 
-+ Temperature Sensor 4 
+Мониторит Humidity & Temperature. Шаблон использует низкоуровневое обнаружение (LLD).
 
-### Шаблоны
-`zabbix_template.netbotz_rack_monitor_200.xml` - включает зависимости триггеров
-`zabbix_template.netbotz_rack_monitor_200.no_deps.xml` - без зависимостей (у одного товарища с зависимостями не хотело импортироваться)
+
+Основано на https://share.zabbix.com/monitoring-equipment/apc-netbotz-rack-monitor-200
+Отличие в том, что в шаблоне по ссылке есть "баг" - в качестве значения для (любого) сенсора используются данные от первого сенсора. В моем шаблоне это исправленно.
 
