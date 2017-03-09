@@ -9,7 +9,7 @@
     UserParameter=postfix.maildrop,find /var/spool/postfix/maildrop -type f | wc -l
     UserParameter=postfix.deferred,find /var/spool/postfix/deferred -type f | wc -l
     UserParameter=postfix.incoming,find /var/spool/postfix/incoming -type f | wc -l
-    UserParameter=postfix.active,  find /var/spool/postfix/ative -type f | wc -l
+    UserParameter=postfix.active,  find /var/spool/postfix/active -type f | wc -l
 
 ### Мониторинг полученных, отправленных байт, писем и других параметров
 На сервере postfix нужно установить `zabbix-sender pflogsumm logtail`
