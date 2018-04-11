@@ -24,6 +24,10 @@
 
 `zabbix_screens.symmetra_lx.xml` - комплексные экраны
 
+### Настройка SNMP
+В веб-интерфейсе симметры перейти в Administration -> Network -> SNMPv1 (шаблон для 1й версии сделан). В `access` поставить галку и нажать "Apply". В `access control` тыкнуть любую строку, там в "Community Name" указать `zabbix`, в "NMS IP/Host Name" - IP заббикс сервера, в "Access Type"  выбрать `Read`. Нажать "Apply".
+
+
 ### Мониторинг через Syslog
 Выполнить настройки описанные в [syslog](https://github.com/angel2s2/zabbix/tree/master/syslog).
 Настроить пересылку логов на symmetra lx:
